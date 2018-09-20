@@ -1,33 +1,50 @@
 var canvas = document.getElementById('canvas')
 var ctx = canvas.getContext('2d')
 
-autoSetCanvasSize(canvas)
-
 listenToUser(canvas)
 
 var eraserEnabled = false
+// 选择 画笔 or 橡皮擦
 eraser.onclick = function () {
 	eraserEnabled = true
-	actions.className = 'actions x'
+	eraser.classList.add('active')
+	pen.classList.remove('active')
 }
-brush.onclick = function () {
+pen.onclick = function () {
 	eraserEnabled = false
-	actions.className = 'actions'
+	pen.classList.add('active')
+	eraser.classList.remove('active')
 }
 
-function autoSetCanvasSize(canvas) {
-	function setCanvasSize() {
-		var pageWidth = document.documentElement.clientWidth;
-		var pageHeight = document.documentElement.clientHeight;
-		canvas.width = pageWidth
-		canvas.height = pageHeight
-	}
-	setCanvasSize()
-	window.onresize = function () {
-		setCanvasSize()
-	}
+// 选择画笔颜色
+black.onclick = function () { 
+	ctx.strokeStyle = 'black'
+	black.classList.add('active')
+	red.classList.remove('active')
+	green.classList.remove('active')
+	blue.classList.remove('active')
 }
-
+red.onclick = function () { 
+	ctx.strokeStyle = 'red'
+	red.classList.add('active')
+	black.classList.remove('active')
+	green.classList.remove('active')
+	blue.classList.remove('active')
+}
+green.onclick = function () { 
+	ctx.strokeStyle = 'green'
+	green.classList.add('active')
+	black.classList.remove('active')
+	red.classList.remove('active')
+	blue.classList.remove('active')
+}
+blue.onclick = function () { 
+	ctx.strokeStyle = 'blue'
+	blue.classList.add('active')
+	black.classList.remove('active')
+	green.classList.remove('active')
+	red.classList.remove('active')
+}
 
 function drawLine(x1, y1, x2, y2) {
 	ctx.beginPath()
