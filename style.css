@@ -75,3 +75,22 @@ body {
 .colors>li.active {
     transform: scale(1.2)
 }
+
+.widths {
+	position: fixed;
+	right: 6px;
+	top: 6px;
+}
+.widths>li{
+	margin: 16px 0;
+}
+.widths>li.thin{
+	width: 20px;
+	height: 0;
+	border-top: 4px solid black;
+}
+.widths>li.thick{
+	width: 20px;
+	height: 0;
+	border-top: 10px solid black;
+}
