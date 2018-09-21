@@ -18,10 +18,10 @@ body {
 
 #canvas {
 	display: block;
-    /* background: white;
+    background: white;
     position: fixed;
     top: 0;
-    left: 0; */
+    left: 0;
 }
 
 .actions {
